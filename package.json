@@ -1,0 +1,15 @@
+{
+  "name": "rabbit-erc20",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "This bot will sweep all available ethers to your wallet",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Victorio Molina",
+  "license": "MIT",
+  "dependencies": {
+    "alchemy-sdk": "^3.6.1",
+    "web3": "^4.16.0",
+    "yargs": "^18.0.0"
+  }
+}
