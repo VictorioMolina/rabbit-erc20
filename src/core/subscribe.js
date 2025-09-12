@@ -4,11 +4,13 @@ import sweepLoop from "./sweepLoop.js";
 import { log } from "../log/index.js";
 
 /**
- * Attach two sockets (via Alchemy) that trigger a new sweep:
+ * Attach three sockets (via Alchemy) that trigger a new sweep:
  *
  * 1. Pending ETH transfer - any transaction *to* the hot wallet.  
  * 2. ERC-20 Transfer event - a `Transfer(address,address,uint256)`
  *    whose recipient equals the hot wallet.
+ * 3. Mined transactions - triggers when any transaction involving the hot
+ *    wallet is mined, including removed transactions (reorgs).
  *
  * When either event fires the function logs a short notice and calls
  * `sweepLoop(ctx)`. It is intentionally idempotent: if multiple events arrive

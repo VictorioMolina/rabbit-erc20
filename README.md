@@ -95,12 +95,12 @@ The `--aggressive-cap` option **never increases what you pay**: it only raises t
 
 | Stage                                  | Parallel?      | Typical latency             |
 | -------------------------------------- | -------------- | --------------------------- |
-| **Event ➜ Sweep loop start**           | N/A            | 50 - 250 ms (WS round‑trip) |
-| Fetch ETH balance + nonce + gas params | ✅ Promise.all | 300 ms                      |
-| Fetch ERC‑20 balances                  | ✅ parallel    | 300 ms                      |
-| Gas estimation for each token          | ✅ parallel    | 150 ms                      |
-| Local signing of N TXs                 | ✅ parallel    | 80 ms                       |
-| `eth_sendRawTransaction` broadcast     | ✅ parallel    | 300 ms (RPC dependent)      |
+| **Event -> Sweep loop start**          | N/A            | 50 - 250 ms (WS round‑trip) |
+| Fetch ETH balance + nonce + gas params | Promise.all    | 300 ms                      |
+| Fetch ERC‑20 balances                  | parallel       | 300 ms                      |
+| Gas estimation for each token          | parallel       | 150 ms                      |
+| Local signing of N TXs                 | parallel       | 80 ms                       |
+| `eth_sendRawTransaction` broadcast     | parallel       | 300 ms (RPC dependent)      |
 | **Total wall time**                    | —              | \~1.2 s                     |
 
 Numbers measured against Alchemy premium WSS endpoint, `LOOP_MS = 250 ms`.
