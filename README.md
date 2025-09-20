@@ -131,24 +131,24 @@ Transaction Security
 ### Sweep Cycle Execution
 
 1. Asset Discovery Phase
-  1.1. Query hot wallet ETH balance
-  1.2. Fetch ERC-20 token balances for configured tokens
-  1.3. Retrieve current network gas parameters
+1.1. Query hot wallet ETH balance
+1.2. Fetch ERC-20 token balances for configured tokens
+1.3. Retrieve current network gas parameters
 
 2. Transaction Construction Phase
-  2.1. Generate ERC-20 transfer calldata for non-zero balances
-  2.2. Estimate gas requirements for each transfer
-  2.3. Calculate cumulative gas costs
+2.1. Generate ERC-20 transfer calldata for non-zero balances
+2.2. Estimate gas requirements for each transfer
+2.3. Calculate cumulative gas costs
 
 3. Batch Optimization Phase
-  3.1. Filter transfers by available gas budget
-  3.2. Construct ETH sweep transaction for remaining balance
-  3.3. Apply gas buffers and safety margins
+3.1. Filter transfers by available gas budget
+3.2. Construct ETH sweep transaction for remaining balance
+3.3. Apply gas buffers and safety margins
 
 4. Execution Phase
-  4.1. Sign all transactions with sequential nonces
-  4.2. Broadcast transactions in parallel
-  4.3. Monitor confirmations and handle failures
+4.1. Sign all transactions with sequential nonces
+4.2. Broadcast transactions in parallel
+4.3. Monitor confirmations and handle failures
 
 ### Event Processing Pipeline
 
