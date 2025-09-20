@@ -8,6 +8,10 @@
 
 Rabbit is a high-performance, real-time cryptocurrency sweeping bot designed for security-critical operations on Ethereum mainnet. The system monitors hot wallets for incoming assets and automatically transfers them to cold storage destinations with optimal gas efficiency and MEV protection.
 
+## Purpose and Scope
+
+Rabbit automates the secure transfer of ERC-20 tokens and ETH, minimizing exposure of funds in hot wallets. It is designed for organizations and individuals requiring high-frequency, low-latency asset sweeping with robust gas management and fault tolerance. The bot prioritizes security, efficiency, and configurability, making it suitable for production environments where asset protection and operational continuity are paramount.
+
 ## Core Capabilities
 
 1. Real-time Asset Detection: WebSocket-based monitoring of ERC-20 transfers and ETH deposits
@@ -47,12 +51,12 @@ node index.js \
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `--alchemy-api-key` | string | ✓ | Alchemy API key for Ethereum mainnet access |
-| `--wallet-sweep` | string | ✓ | Source wallet address to monitor and sweep |
-| `--wallet-dest` | string | ✓ | Destination cold wallet address |
-| `--private-key` | string | ✓ | Hot wallet private key (hex format) |
-| `--max-gas-price` | number | | Gas price ceiling in gwei (default: 800) |
-| `--aggressive-cap` | boolean | | Enable automatic gas cap adjustment |
+| `--alchemy-api-key` | string | Yes | Alchemy API key for Ethereum mainnet access |
+| `--wallet-sweep` | string | Yes | Source wallet address to monitor and sweep |
+| `--wallet-dest` | string | Yes | Destination cold wallet address |
+| `--private-key` | string | Yes | Hot wallet private key (hex format) |
+| `--max-gas-price` | number | No | Gas price ceiling in gwei (default: 800) |
+| `--aggressive-cap` | boolean | No | Enable automatic gas cap adjustment |
 
 ## Architecture
 
